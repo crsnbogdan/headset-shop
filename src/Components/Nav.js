@@ -1,4 +1,5 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { motion } from 'framer-motion';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -9,37 +10,14 @@ const Nav = () => {
         KB<span className="text-white font-light text-lg">.shop</span>
       </h3>
       <div className="nav__links w-3/12 text-lg flex items-center justify-between">
-        <NavLink
-          to="/"
-          end
-          style={({ isActive }) => {
-            return {
-              color: isActive ? '#fde047' : '#ffffff',
-            };
-          }}
-        >
-          /home
+        <NavLink to="/" end className="nav__link cart">
+          .home
         </NavLink>
-        <NavLink
-          to="shop"
-          end
-          style={({ isActive }) => {
-            return {
-              color: isActive ? '#fde047' : '#ffffff',
-            };
-          }}
-        >
-          /shop
+        <NavLink to="shop" end className="nav__link">
+          .shop
         </NavLink>
-        <NavLink
-          to="cart"
-          style={({ isActive }) => {
-            return {
-              color: isActive ? '#fde047' : '#ffffff',
-            };
-          }}
-        >
-          <ShoppingCartIcon />
+        <NavLink to="cart" className="nav__link">
+          <ShoppingCartIcon sx={{ height: '20px' }} />
         </NavLink>
       </div>
     </nav>
