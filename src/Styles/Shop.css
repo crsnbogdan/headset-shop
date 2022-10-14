@@ -1,0 +1,43 @@
+.shop {
+    min-height: 75vh;
+}
+
+.shop__header {
+    height: 150px;
+}
+
+.shop__productscontainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.shop__product {
+    place-self: center;
+    width: 400px;
+    background-color: white;
+    padding: 10px;
+    position: relative;
+}
+.shop__productimg {
+    width: 100%;
+    height: 175px;
+    background-size: 100% auto ;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.product__price--sale {
+    color: red;
+}
+.product__price--sale:after {
+    content: 'SALE';
+    font-weight: 600;
+    color: white;
+    background-color: red; 
+    padding: 2px 8px;
+    border-radius: 5px;
+    right: 10px;
+    top: 10px;
+    position: absolute;
+}
