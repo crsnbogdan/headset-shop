@@ -3,22 +3,28 @@
 }
 
 .shop__header {
-    height: 150px;
+    height: 250px;
+}
+
+.shop__maincontainer {
+    min-height: 75vh;
 }
 
 .shop__productscontainer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px 20px;
 }
-
+.shop__product--container {
+    width: 300px;
+}
 .shop__product {
-    place-self: center;
-    width: 400px;
+    width: 300px;
     background-color: white;
     padding: 10px;
     position: relative;
 }
+
 .shop__productimg {
     width: 100%;
     height: 175px;
@@ -30,14 +36,35 @@
 .product__price--sale {
     color: red;
 }
+
 .product__price--sale:after {
     content: 'SALE';
     font-weight: 600;
-    color: white;
-    background-color: red; 
+    color: black;
+    background-color: #fde047; 
     padding: 2px 8px;
     border-radius: 5px;
     right: 10px;
     top: 10px;
     position: absolute;
+}
+
+.product__addbtn {
+    overflow: hidden;
+    color: white;
+    background-image: linear-gradient(to right, rgb(29, 78, 216), rgb(126, 34, 206));
+
+}
+
+.addbtn__icon {
+    position: absolute;
+    width: 48px!important;
+    height: 32px!important;
+    padding: 0.4rem!important;
+    top: 0;
+    left: -5px;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 200px;
+    background-color: #5184fa;
 }

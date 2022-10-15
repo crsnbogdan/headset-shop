@@ -10,7 +10,7 @@ const RouteSwitch = () => {
 
   useEffect(() => {
     fetch(
-      'https://api.bestbuy.com/v1/products((search=keyboard&search=gaming&search=mechanical&search=60))?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=regularPrice.asc&show=name,regularPrice,longDescription,image,salePrice&pageSize=20&format=json'
+      'https://api.bestbuy.com/v1/products((search=keyboard&search=mechanical&search=wired&search=gaming))?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=regularPrice.asc&show=name,regularPrice,longDescription,image,salePrice,sku&&pageSize=60&format=json'
     )
       .then((res) => res.json())
       .then((res) => setProductsArr(res.products))
