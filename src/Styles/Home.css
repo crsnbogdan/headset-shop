@@ -5,12 +5,12 @@
 }
 
 .hero {
-    height: 75vh;
+    height: 80vh;
     width: 100vw;
     z-index: 3;
 }
 .hero__gradient {
-    height: 75vh;
+    height: 80vh;
     width: 100vw;
     position: absolute;
     top: 0;
@@ -20,7 +20,7 @@
 
 }
 .hero__bg {
-    height: 75vh;
+    height: 80vh;
     width: 100vw;
     position: absolute;
     top: 0;

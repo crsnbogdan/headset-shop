@@ -21,8 +21,8 @@ const ShopProducts = (props) => {
         className="shop__product--container"
         whileHover={{
           boxShadow: '0px 0px 15px -2px rgba(0, 0, 0, 0.15)',
-          delay: 0,
         }}
+        transition={{ duration: 0.25 }}
       >
         <motion.div
           initial={{ y: '-20px', opacity: 0 }}
