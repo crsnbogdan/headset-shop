@@ -7,6 +7,16 @@ import Shop from './Pages/Shop/Shop';
 
 const RouteSwitch = () => {
   const [productsArr, setProductsArr] = useState([]);
+  const [cartQuantity, setCartQuantity] = useState(0);
+
+  const updateCartQuantity = (toIncrease) => {
+    // if ((cartQuantity = 0)) return;
+    if (toIncrease) {
+      return setCartQuantity(cartQuantity + 1);
+    } else {
+      return setCartQuantity(cartQuantity - 1);
+    }
+  };
 
   useEffect(() => {
     fetch(
@@ -19,10 +29,18 @@ const RouteSwitch = () => {
   return (
     <div className="app">
       <BrowserRouter>
-        <Nav />
+        <Nav cartQuantity={cartQuantity} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="shop" element={<Shop productsArr={productsArr} />} />
+          <Route
+            path="shop"
+            element={
+              <Shop
+                productsArr={productsArr}
+                updateCartQuantity={updateCartQuantity}
+              />
+            }
+          />
         </Routes>
         <Footer />
       </BrowserRouter>

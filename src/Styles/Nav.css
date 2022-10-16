@@ -1,0 +1,38 @@
+nav {
+    background: linear-gradient(180deg, rgb(13, 23, 45) 15%, rgb(16, 9, 61) 100%);
+    height: 10vh;
+    border-bottom: 2px solid rgb(253,224, 71);
+}
+
+.nav__link {
+    color: white;
+}
+.nav__link span {
+    color: #fde047;
+}
+.nav__link.active {
+    color: #fde047;
+}
+
+#cart__underline {
+    width: 0%;
+    height: 2px;
+    background-color: red;
+}
+
+.nav__link {
+    border-bottom: 0px solid #fde047;
+    transition: 0.5s ease-in;
+}
+.nav__link.active {
+    border-bottom: 2px solid #fde047;
+}
+
+.nav__qty {
+ pointer-events: none;
+ background-color: red;
+ width: 20px;
+ height: 20px;
+ top: -6px;
+ right: -4px;
+}

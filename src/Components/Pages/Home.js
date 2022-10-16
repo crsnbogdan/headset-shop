@@ -22,7 +22,7 @@ const Home = () => {
                 options={{
                   autoStart: true,
                   loop: true,
-                  delay: 40,
+                  delay: 'natural',
                   strings: ['ergonomic,', 'bold,', 'your new keyboard.'],
                   wrapperClassName:
                     'hero__typewriter text-white text-5xl font-bold text-yellow-300',
@@ -60,9 +60,9 @@ const Home = () => {
           </motion.div>
         </div>
         <motion.div
-          initial={{ y: 0, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.5, delay: 2, type: 'easeIn' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 3 }}
           className="hero__model w-7/12"
         >
           <Model />

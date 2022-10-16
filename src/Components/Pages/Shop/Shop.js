@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
+import Typewriter from 'typewriter-effect';
 import '../../../Styles/Shop.css';
 import ShopProducts from './ShopProducts';
 
@@ -10,10 +11,23 @@ const Shop = (props) => {
         <motion.h1
           initial={{ y: '-20px', opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.25 }}
           className="text-white text-6xl font-bold"
         >
-          <span className="text-yellow-300">/</span>shop
+          <Typewriter
+            options={{
+              autoStart: true,
+              delay: 'natural',
+              deleteSpeed: Infinity, // Infinity set to disable
+              // the deletion of the string
+              pauseFor: 1000,
+              strings: ['shop'],
+              wrapperClassName:
+                'hero__typewriter text-white text-5xl font-bold text-white',
+              cursorClassName:
+                'hero__cursor text-5xl font-light text-yellow-300',
+            }}
+          />
         </motion.h1>
       </div>
       <div className="shop__maincontainer py-12 px-24 bg-slate-100 h-full">
@@ -25,7 +39,10 @@ const Shop = (props) => {
         >
           Products:
         </motion.h2>
-        <ShopProducts productsArr={props.productsArr} />
+        <ShopProducts
+          productsArr={props.productsArr}
+          updateCartQuantity={props.updateCartQuantity}
+        />
       </div>
     </div>
   );

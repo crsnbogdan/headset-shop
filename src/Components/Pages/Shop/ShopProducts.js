@@ -7,7 +7,6 @@
 - id
 */
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { red } from '@mui/material/colors';
 import { motion } from 'framer-motion';
 import React from 'react';
 import '../../../Styles/Shop.css';
@@ -15,10 +14,11 @@ import '../../../Styles/Shop.css';
 const ShopProducts = (props) => {
   let delayAnimVal = 0.0;
   let products = props.productsArr.map((product) => {
-    delayAnimVal += 0.1;
+    delayAnimVal += 0.15;
     return (
       <motion.div
         className="shop__product--container"
+        key={product.sku}
         whileHover={{
           boxShadow: '0px 0px 15px -2px rgba(0, 0, 0, 0.15)',
         }}
@@ -29,9 +29,7 @@ const ShopProducts = (props) => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: delayAnimVal }}
           className="shop__product flex flex-col justify-between"
-          key={product.sku}
         >
-          {/* <img src={product.image} alt="product" className="" /> */}
           <div
             style={{
               backgroundImage: `url(${product.image})`,
@@ -39,7 +37,7 @@ const ShopProducts = (props) => {
             className="shop__productimg"
           />
           <p className="font-semibold my-4">
-            {product.name.substring(0, 60).trim() + '(...)'}
+            {product.name.substring(0, 50).trim() + '(...)'}
           </p>
           <p
             className={
@@ -57,9 +55,17 @@ const ShopProducts = (props) => {
             whileHover={{
               backgroundImage:
                 'linear-gradient(to right, rgb(139, 92, 246), rgb(29, 78, 216))',
-              transition: { duration: 0.2 },
             }}
-            className="product__addbtn overflow relative h-8 rounded-md w-full "
+            transition={{
+              duration: 0.5,
+            }}
+            whileTap={{
+              scale: 0.98,
+            }}
+            className="product__addbtn overflow relative h-8 rounded-md w-full"
+            onClick={() => {
+              props.updateCartQuantity(true);
+            }}
           >
             <ShoppingCartIcon className="addbtn__icon" /> Add to Cart
           </motion.button>

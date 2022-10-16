@@ -60,7 +60,7 @@
 .product__addbtn {
     overflow: hidden;
     color: white;
-    background-image: linear-gradient(to right, rgb(29, 78, 216), rgb(126, 34, 206));
+    background-image: linear-gradient(to right, rgb(29, 78, 216), rgb(126, 34, 206) 75%);
 
 }
 
