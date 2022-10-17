@@ -114,9 +114,6 @@
         font-size: 1.4rem!important;
         margin-top: 3rem!important;
     }
-    nav .nav__links  {
-        width: 50%!important;
-    }
 }
 @media screen and (max-width: 768px) {
     .hero .model__container {
@@ -167,11 +164,5 @@
     .hero__shopbtn {
         font-size: 1.2rem!important;
         margin-top: 3rem!important;
-    }
-    .nav {
-        padding: 20px 40px!important;
-    }
-    nav .nav__links  {
-        width: 50%!important;
     }
 }

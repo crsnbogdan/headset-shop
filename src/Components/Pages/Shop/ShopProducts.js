@@ -9,6 +9,7 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { motion } from 'framer-motion';
 import React from 'react';
+import StarRatings from 'react-star-ratings';
 import '../../../Styles/Shop.css';
 
 const ShopProducts = (props) => {
@@ -39,6 +40,24 @@ const ShopProducts = (props) => {
           <p className="font-semibold my-4">
             {product.name.substring(0, 50).trim() + '(...)'}
           </p>
+          <div className="flex mb-4">
+            <StarRatings
+              rating={
+                product.customerReviewAverage
+                  ? product.customerReviewAverage
+                  : 0
+              }
+              starRatedColor="#fde047"
+              starDimension="18px"
+              starSpacing="0px"
+              numberOfStars={5}
+              name="rating"
+            />
+            <span className="text-sm mt-1 text-slate-400">
+              {product.customerReviewCount &&
+                `(${product.customerReviewCount})`}
+            </span>
+          </div>
           <p
             className={
               product.salePrice < product.regularPrice

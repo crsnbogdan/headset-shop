@@ -12,10 +12,10 @@ const Nav = (props) => {
       </h3>
       <div className="nav__links w-3/12 text-lg flex items-center justify-between">
         <NavLink to="/" end className="nav__link cart">
-          /home
+          home
         </NavLink>
         <NavLink to="shop" end className="nav__link">
-          /shop
+          shop
         </NavLink>
         <NavLink to="cart" className="nav__link relative">
           {props.cartQuantity > 0 ? (

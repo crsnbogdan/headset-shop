@@ -23,9 +23,9 @@ const Shop = (props) => {
               pauseFor: 1000,
               strings: ['shop'],
               wrapperClassName:
-                'hero__typewriter text-white text-5xl font-bold text-white',
+                'shop__typewriter text-white text-5xl font-bold text-white',
               cursorClassName:
-                'hero__cursor text-5xl font-light text-yellow-300',
+                'shop__cursor text-5xl font-light text-yellow-300',
             }}
           />
         </motion.h1>
