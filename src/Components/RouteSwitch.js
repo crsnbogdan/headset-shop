@@ -8,7 +8,9 @@ import Shop from './Pages/Shop/Shop';
 const RouteSwitch = () => {
   const [productsArr, setProductsArr] = useState([]);
   const [cartQuantity, setCartQuantity] = useState(0);
-
+  const [cart, setCart] = useState([]);
+  // cart structure - key- value pair - key is SKU, value is an object,
+  // the object has two values, the quantity of that product and another object that contains the product info
   const updateCartQuantity = (toIncrease) => {
     // if ((cartQuantity = 0)) return;
     if (toIncrease) {
@@ -20,11 +22,10 @@ const RouteSwitch = () => {
 
   useEffect(() => {
     fetch(
-      'https://api.bestbuy.com/v1/products((search=keyboard&search=mechanical&search=wired&search=gaming))?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=regularPrice.asc&&show=name,customerReviewAverage,customerReviewCount,regularPrice,longDescription,image,salePrice&pageSize=60&format=json'
+      'https://api.bestbuy.com/v1/products((search=keyboard&search=mechanical&search=wired&search=gaming))?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=regularPrice.asc&&show=name,customerReviewAverage,customerReviewCount,regularPrice,longDescription,image,salePrice,sku&pageSize=60&format=json'
     )
       .then((res) => res.json())
       .then((res) => setProductsArr(res.products))
-      .then(() => console.log(productsArr))
       .catch(() => console.error('invalid fetch'));
   }, []);
   return (
@@ -39,6 +40,8 @@ const RouteSwitch = () => {
               <Shop
                 productsArr={productsArr}
                 updateCartQuantity={updateCartQuantity}
+                cart={cart}
+                setCart={setCart}
               />
             }
           />

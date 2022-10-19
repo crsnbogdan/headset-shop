@@ -42,6 +42,8 @@ const Shop = (props) => {
         <ShopProducts
           productsArr={props.productsArr}
           updateCartQuantity={props.updateCartQuantity}
+          cart={props.cart}
+          setCart={props.setCart}
         />
       </div>
     </div>

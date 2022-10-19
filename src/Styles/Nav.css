@@ -42,10 +42,12 @@ nav {
         width: 50%!important;
     }
 }
+
 @media screen and (max-width: 550px) {
     .nav {
         padding: 20px 40px!important;
     }
+
     .nav .nav__links  {
         width: 50%!important;
     }

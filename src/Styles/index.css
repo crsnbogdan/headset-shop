@@ -3,8 +3,6 @@
 @tailwind utilities;
 @import-normalize;
 
-
-
 footer {
     height: 10vh;
     background: linear-gradient(0deg, rgb(13, 23, 45) 15%, rgb(16, 9, 61) 100%);

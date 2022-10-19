@@ -9,6 +9,7 @@
     width: 100vw;
     z-index: 3;
 }
+
 .hero__gradient {
     height: 80vh;
     width: 100vw;
@@ -17,8 +18,8 @@
     left: 0;
     z-index: 1;
     background: linear-gradient(180deg, rgba(15,23,42,1) 35%, rgba(23,13,87,1) 100%);
-
 }
+
 .hero__bg {
     height: 80vh;
     width: 100vw;
@@ -32,7 +33,6 @@
     opacity: 0.1;
 }
 
-
 .hero .model__container {
     position: absolute;
     width: 1000px!important;
@@ -40,42 +40,48 @@
     top: 0px;
 }
 
-
-
 @media screen and (max-width: 1500px) {
     .hero__typewriter {
         font-size: 2.6  rem!important;
     }
+
     .hero .model__container {
         right: 0;
         top: 200px;
         width: 900px!important;
         height: auto!important;
     }
+
     .hero__bg {
         background-size: 1900px;
     }
 }
+
 @media screen and (max-width: 1280px) {
     .hero__textcontainer > h1 > span {
         font-size: 1.4rem;
     }
+
     .hero__typewriter {
         font-size: 1.8rem!important;
     }
+
     .hero .model__container {
         right: 60px;
         top: 240px;
         width: 700px!important;
         height: auto!important;
     }
+
     .hero__bg {
         background-size: 1500px;
     }
+
     .hero__shopbtn {
         font-size: 1.4rem!important;
     }
 }
+
 @media screen and (max-width: 1024px) {
     .hero {
         flex-direction: column!important;
@@ -85,60 +91,73 @@
     .hero__textcontainer p {
         text-align: center;
     }
+
     .shopbtn__container {
         margin: auto;
-    }   
+    }  
+
     .hero__textcontainer {
         align-items: center;
         justify-content: center;
         width: 100%!important;
     }
+
     .hero__textcontainer > h1 > span {
         font-size: 1.4rem;
     }
+
     .hero__textcontainer h1 {
         font-size: 1.8rem!important;
         margin-bottom: 160px!important;
     }
+
     .hero .model__container {
         right: 50%;
-        translate: 45% 0;
-        top: 190px;
+        translate: 50% 0;
+        top: 220px;
         width: 700px!important;
         height: auto!important;
     }
+
     .hero__bg {
         background-size: 1500px;
     }
+
     .hero__shopbtn {
         font-size: 1.4rem!important;
         margin-top: 3rem!important;
     }
 }
 @media screen and (max-width: 768px) {
+    .hero {
+        padding: 0 100px!important;
+    }
     .hero .model__container {
         right: 50%;
         translate: 48% 0;
-        top: 230px;
+        top: 250px;
         width: 500px!important;
         height: auto!important;
     }
+
     .hero__textcontainer h1 {
         margin-bottom: 120px!important;
     }
-    
 }
+
 @media screen and (max-width: 550px) {
     .hero {
         flex-direction: column!important;
         justify-content: center;
         padding: 0 60px!important;
     }
+
     .hero__textcontainer {
         align-items: center;
         justify-content: center;
         width: 100%!important;
     }
+
     .hero__textcontainer > h1 > span {
         font-size: 1rem!important;
         padding-bottom: -20px!important;
@@ -147,20 +166,24 @@
     .hero__textcontainer h1 {
         margin-bottom: 120px!important;
     }
+
     .hero__textcontainer .hero__typewriter {
         font-size: 1.6rem!important;
         margin-bottom: 80px!important;
     }
+
     .hero .model__container {
         right: 50%;
         translate: 47% 0;
-        top: 260px;
+        top: 280px;
         width: 380px!important;
         height: auto!important;
     }
+
     .hero__bg {
         background-size: 1200px auto;
     }
+
     .hero__shopbtn {
         font-size: 1.2rem!important;
         margin-top: 3rem!important;
