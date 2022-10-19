@@ -28,6 +28,15 @@ const RouteSwitch = () => {
       .then((res) => setProductsArr(res.products))
       .catch(() => console.error('invalid fetch'));
   }, []);
+
+  // useEffect(() => {
+  //   document.addEventListener('click', (e) => {
+  //     let navLinksArea = document.querySelector('.nav__links');
+  //     if (!navLinksArea.contains(e.target)) {
+  //       navLinksArea.style.right = '-300px';
+  //     }
+  //   });
+  // }, []);
   return (
     <div className="app">
       <BrowserRouter>

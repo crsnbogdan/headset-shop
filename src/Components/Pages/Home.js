@@ -9,6 +9,8 @@ import '../../Styles/Home.css';
 const Home = () => {
   return (
     <div className="frontpage relative">
+      <div className="page__navoverlay" />
+
       <div className="hero relative flex px-40">
         <div className="hero__textcontainer w-5/12 flex flex-col justify-center items-start">
           <motion.h1

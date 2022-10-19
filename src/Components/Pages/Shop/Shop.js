@@ -7,6 +7,7 @@ import ShopProducts from './ShopProducts';
 const Shop = (props) => {
   return (
     <div className="shop bg-blue-300">
+      <div className="page__navoverlay" />
       <div className="shop__hero relative flex items-center justify-center bg-slate-200">
         <motion.h1
           initial={{ y: '-20px', opacity: 0 }}

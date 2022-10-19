@@ -1,3 +1,11 @@
+.nav__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    width: 100%;
+}
+
 nav {
     background: linear-gradient(180deg, rgb(13, 23, 45) 15%, rgb(16, 9, 61) 100%);
     height: 10vh;
@@ -7,9 +15,11 @@ nav {
 .nav__link {
     color: white;
 }
+
 .nav__link span {
     color: #fde047;
 }
+
 .nav__link.active {
     color: #fde047;
 }
@@ -24,6 +34,7 @@ nav {
     border-bottom: 0px solid #fde047;
     transition: 0.5s ease-in;
 }
+
 .nav__link.active {
     border-bottom: 2px solid #fde047;
 }
@@ -39,16 +50,54 @@ nav {
 
 @media screen and (max-width: 1024px) {
     nav .nav__links  {
-        width: 50%!important;
+        width: 40%!important;
     }
 }
-
-@media screen and (max-width: 550px) {
-    .nav {
-        padding: 20px 40px!important;
+@media screen and (min-width: 768px) {
+    .nav__sidebartoggle {
+        display: none!important;
     }
 
-    .nav .nav__links  {
-        width: 50%!important;
+    .nav__links {
+        position: relative!important;
+        right: unset!important;
+        display: flex!important;
+    }
+
+    .nav__close {
+        display: none!important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav {
+        padding: 40px 35px!important;
+    }
+
+    .nav__close {
+        position: absolute;
+        right: 35px;
+        top: 35px;
+    }
+
+    nav.nav .nav__links  {
+        padding: 100px 35px;
+        flex-direction: column!important;
+        position: fixed;
+        display: block!important;
+        background: linear-gradient(0deg, rgb(13, 23, 45) 15%, rgb(16, 9, 61) 100%);
+        right: -300px;
+        width: 300px!important;
+        top: 0;
+        z-index: 10;
+        height: 100vh;
+    }
+
+    .nav__link {
+        display: block;
+        margin-bottom: 25px;
+    }
+    
+    .nav__qty {
+        display: none!important;
     }
 }

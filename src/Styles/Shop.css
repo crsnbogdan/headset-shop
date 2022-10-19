@@ -1,6 +1,18 @@
 .shop {
     min-height: 75vh;
 }
+.page__navoverlay {
+    display: none;
+}
+.page__navoverlay.visible {
+    display: block;
+    z-index: 5; 
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #00000086;
+}
 
 .shop__hero {
     height: 150px;
