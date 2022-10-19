@@ -16,6 +16,7 @@
 
 .shop__hero {
     height: 150px;
+    margin-top: 10vh;
     background-position: center;
     background-size: 100% auto;
     background-image: url('../Media/shop-bg.jpg');

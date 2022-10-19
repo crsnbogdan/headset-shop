@@ -7,13 +7,11 @@ const Model = () => {
   let camera, renderer, model;
 
   //lights
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 2.5);
   const pointLight = new THREE.PointLight(0xedf6fc, 2.5);
   const purpleHighlight = new THREE.PointLight(0xee00ff, 0.05);
   const ambientLight = new THREE.AmbientLight(0xffffff, 6);
   pointLight.position.set(0, 0, 350);
-  directionalLight.position.set(500, -15000, 0);
-  scene.add(pointLight, ambientLight, purpleHighlight, directionalLight);
+  scene.add(pointLight, ambientLight, purpleHighlight);
 
   //loader
   const loader = new GLTFLoader();

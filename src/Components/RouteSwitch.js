@@ -9,10 +9,7 @@ const RouteSwitch = () => {
   const [productsArr, setProductsArr] = useState([]);
   const [cartQuantity, setCartQuantity] = useState(0);
   const [cart, setCart] = useState([]);
-  // cart structure - key- value pair - key is SKU, value is an object,
-  // the object has two values, the quantity of that product and another object that contains the product info
   const updateCartQuantity = (toIncrease) => {
-    // if ((cartQuantity = 0)) return;
     if (toIncrease) {
       return setCartQuantity(cartQuantity + 1);
     } else {
