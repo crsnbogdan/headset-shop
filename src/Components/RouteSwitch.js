@@ -26,18 +26,15 @@ const RouteSwitch = () => {
       .catch(() => console.error('invalid fetch'));
   }, []);
 
-  // useEffect(() => {
-  //   document.addEventListener('click', (e) => {
-  //     let navLinksArea = document.querySelector('.nav__links');
-  //     if (!navLinksArea.contains(e.target)) {
-  //       navLinksArea.style.right = '-300px';
-  //     }
-  //   });
-  // }, []);
   return (
     <div className="app">
       <BrowserRouter>
-        <Nav cartQuantity={cartQuantity} />
+        <Nav
+          updateCartQuantity={updateCartQuantity}
+          cartQuantity={cartQuantity}
+          cart={cart}
+          setCart={setCart}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route

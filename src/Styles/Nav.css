@@ -12,6 +12,36 @@ nav {
     border-bottom: 2px solid rgb(253,224, 71);
 }
 
+
+
+.nav__cartcontainer {
+    display: grid;
+    grid-gap: 10px;
+    position: fixed;
+    width: 500px;
+    top: 8vh;
+    right: 6rem;
+    z-index: 7;
+    -webkit-box-shadow: 0px 0px 15px 0px #00000015; 
+    box-shadow: 0px 0px 15px 0px #00000015;}
+
+.nav__cartitem {
+    grid-template-columns: 100px 1fr 100px;
+    gap: 10px;
+    height: 120px;
+    overflow: hidden;
+}
+
+
+
+.cartitem__delete {
+    color: red!important;
+}
+
+.cartitem__qtymodifiers {
+    color: black;
+}
+
 .nav__link {
     color: white;
 }
@@ -53,6 +83,7 @@ nav {
         width: 40%!important;
     }
 }
+
 @media screen and (min-width: 768px) {
     .nav__sidebartoggle {
         display: none!important;
@@ -68,9 +99,14 @@ nav {
         display: none!important;
     }
 }
+
 @media screen and (max-width: 768px) {
     .nav {
         padding: 40px 35px!important;
+    }
+
+    .nav__cartcontainer {
+        display: none;
     }
 
     .nav__close {

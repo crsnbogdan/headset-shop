@@ -18,7 +18,7 @@ const ShopProducts = (props) => {
     delayAnimVal += 0.15;
     return (
       <motion.div
-        className="shop__product--container"
+        className="shop__productcontainer"
         key={product.sku}
         whileHover={{
           boxShadow: '0px 0px 15px -2px rgba(0, 0, 0, 0.15)',
