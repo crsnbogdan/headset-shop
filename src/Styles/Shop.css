@@ -1,9 +1,11 @@
 .shop {
     min-height: 75vh;
 }
+
 .page__navoverlay {
     display: none;
 }
+
 .page__navoverlay.visible {
     display: block;
     z-index: 5; 
@@ -25,9 +27,7 @@
 .shop__hero h1 {
     text-shadow: 0 0 10px rgb(0, 0, 0);
     margin-top: -15px;
-    
 }
-
 
 .shop__maincontainer {
     min-height: 75vh;
@@ -54,14 +54,6 @@
     width: 100%;
     height: 100%;
     place-self: center;
-}
-.nav__cartemptytext {
-    place-self: center;
-}
-
-.nav__carttotal {
-    place-self: center;
-    grid-column: 1 / -1;
 }
 
 .shop__product {
@@ -157,6 +149,7 @@
     .shop__maincontainer {
         padding: 1.5rem!important;
     }
+    
     .shop_addedpopup{
         right: 25%;
         width: 50vw;

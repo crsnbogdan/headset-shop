@@ -129,10 +129,12 @@
         margin-top: 3rem!important;
     }
 }
+
 @media screen and (max-width: 768px) {
     .hero {
         padding: 0 100px!important;
     }
+
     .hero .model__container {
         right: 50%;
         translate: 48% 0;

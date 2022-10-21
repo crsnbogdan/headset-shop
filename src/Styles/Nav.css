@@ -12,7 +12,14 @@ nav {
     border-bottom: 2px solid rgb(253,224, 71);
 }
 
+.nav__cartemptytext {
+    place-self: center;
+}
 
+.nav__carttotal {
+    place-self: center;
+    grid-column: 1 / -1;
+}
 
 .nav__cartcontainer {
     display: grid;
@@ -24,7 +31,7 @@ nav {
     z-index: 7;
     -webkit-box-shadow: 0px 0px 15px 0px #00000035; 
     box-shadow: 0px 0px 15px 0px #00000035
-};
+}
 
 .nav__cartitem {
     gap: 10px;
@@ -35,7 +42,6 @@ nav {
 div.nav__cartcontainer.p-2.bg-slate-100.absolute > div.nav__cartitem{
     display: grid;
     grid-template-columns: 100px 1fr 100px;
-
 }
 
 .cartitem__delete {
@@ -50,11 +56,7 @@ div.nav__cartcontainer.p-2.bg-slate-100.absolute > div.nav__cartitem{
     color: white;
 }
 
-.nav__link span {
-    color: #fde047;
-}
-
-.nav__link.active {
+.nav__link.active , .nav__link span {
     color: #fde047;
 }
 

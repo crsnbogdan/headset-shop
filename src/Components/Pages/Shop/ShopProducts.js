@@ -13,8 +13,33 @@ import StarRatings from 'react-star-ratings';
 import '../../../Styles/Shop.css';
 
 const ShopProducts = (props) => {
+  let productsArr = props.productsArr;
+  if (props.sortType === 'reviews') {
+    productsArr = productsArr.sort((first, second) =>
+      first.customerReviewCount < second.customerReviewCount ? 1 : -1
+    );
+  } else if (props.sortType === 'rating') {
+    productsArr = productsArr.sort((first, second) =>
+      first.customerReviewAverage < second.customerReviewAverage ? 1 : -1
+    );
+  } else if (props.sortType === 'priceAsc') {
+    productsArr = productsArr.sort((first, second) =>
+      (first.salePrice || first.regularPrice) >
+      (second.salePrice || second.regularPrice)
+        ? 1
+        : -1
+    );
+  } else if (props.sortType === 'priceDesc') {
+    productsArr = productsArr.sort((first, second) =>
+      (first.salePrice || first.regularPrice) <
+      (second.salePrice || second.regularPrice)
+        ? 1
+        : -1
+    );
+  }
+
   let delayAnimVal = 0.0;
-  let products = props.productsArr.map((product) => {
+  let sortedProducts = productsArr.map((product) => {
     delayAnimVal += 0.15;
     return (
       <motion.div
@@ -113,7 +138,7 @@ const ShopProducts = (props) => {
     );
   });
 
-  return <div className="shop__productscontainer">{products}</div>;
+  return <div className="shop__productscontainer">{sortedProducts}</div>;
 };
 
 export default ShopProducts;

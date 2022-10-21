@@ -4,8 +4,15 @@ import Typewriter from 'typewriter-effect';
 import '../../../Styles/Shop.css';
 import ShopProducts from './ShopProducts';
 
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+
 const Shop = (props) => {
   const [cartPopup, setCartPopup] = useState(false);
+  const [sortType, setSortType] = useState('reviews');
+
   return (
     <div className="shop bg-blue-300">
       <div className="page__navoverlay" />
@@ -46,18 +53,32 @@ const Shop = (props) => {
             </motion.div>
           )}
         </AnimatePresence>
-        <motion.h2
+        <motion.div
+          className="flex justify-between items-center mb-4"
           initial={{ y: '-10px', opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
-          className=" font-semibold text-2xl mb-3"
         >
-          Products:
-        </motion.h2>
+          <h2 className="text-2xl">Products:</h2>
+          <FormControl sx={{ width: '160px' }}>
+            <InputLabel id="demo-simple-select-label">Sort by</InputLabel>
+            <Select
+              value={sortType}
+              label="sortType"
+              onChange={(e) => setSortType(e.target.value)}
+            >
+              <MenuItem value="reviews">Review count</MenuItem>
+              <MenuItem value="rating">Rating</MenuItem>
+              <MenuItem value="priceAsc">Price ( asc. )</MenuItem>
+              <MenuItem value="priceDesc">Price ( des. )</MenuItem>
+            </Select>
+          </FormControl>
+        </motion.div>
         <ShopProducts
           productsArr={props.productsArr}
           updateCartQuantity={props.updateCartQuantity}
           cart={props.cart}
+          sortType={sortType}
           setCartPopup={setCartPopup}
           cartPopup={cartPopup}
           setCart={props.setCart}
