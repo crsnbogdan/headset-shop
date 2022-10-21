@@ -3,13 +3,13 @@
 @tailwind utilities;
 @import-normalize;
 
-
 footer {
     max-width: 100vw!important;
     height: 10vh;
     background: linear-gradient(0deg, rgb(13, 23, 45) 15%, rgb(16, 9, 61) 100%);
     border-top: 2px solid rgb(253,224, 71);
 }
+
 .app {
     max-width: 100vw!important;
     overflow: hidden;

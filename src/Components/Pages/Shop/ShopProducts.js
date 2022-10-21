@@ -109,9 +109,12 @@ const ShopProducts = (props) => {
             className="product__addbtn overflow relative h-8 rounded-md w-full"
             onClick={() => {
               props.updateCartQuantity(true);
+              props.setCartPopup(true);
+              setTimeout(() => props.setCartPopup(false), 700);
               let productInCartIndex = props.cart.findIndex(
                 (item) => product.sku === item.sku
               );
+
               if (productInCartIndex === -1) {
                 return props.setCart([
                   ...props.cart,
@@ -127,8 +130,6 @@ const ShopProducts = (props) => {
                   props.cart[productInCartIndex].qty + 1;
                 props.setCart([...cachedCart]);
               }
-              props.setCartPopup(true);
-              setTimeout(() => props.setCartPopup(false), 700);
             }}
           >
             <ShoppingCartIcon className="addbtn__icon" /> Add to Cart
