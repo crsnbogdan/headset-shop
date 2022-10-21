@@ -25,10 +25,13 @@
 .shop__hero h1 {
     text-shadow: 0 0 10px rgb(0, 0, 0);
     margin-top: -15px;
+    
 }
+
 
 .shop__maincontainer {
     min-height: 75vh;
+    max-width: 100%;
 }
 
 .shop_addedpopup {
@@ -41,6 +44,7 @@
 }
 
 .shop__productscontainer {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;

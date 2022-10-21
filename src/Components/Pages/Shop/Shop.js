@@ -32,7 +32,7 @@ const Shop = (props) => {
           />
         </motion.h1>
       </div>
-      <div className="shop__maincontainer py-12 px-24 bg-slate-100 h-full">
+      <div className="shop__maincontainer py-12 px-24  bg-slate-100 h-full">
         <AnimatePresence>
           {cartPopup && (
             <motion.div
