@@ -16,7 +16,14 @@ const Nav = (props) => {
 
   let cartProducts = props.cart.map((cartItem) => {
     return (
-      <motion.div className="nav__cartitem p-2 bg-white grid" key={uniqid()}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.25 }}
+        exit={{ opacity: 0, display: 'none' }}
+        className="nav__cartitem grid p-2 bg-white"
+        key={uniqid()}
+      >
         <img className="cartitem__img" src={cartItem.product.image} alt="" />
         <div className="cartitem__info flex flex-col justify-between text-sm text-black">
           <p className="text-black font-semibold">
@@ -71,6 +78,9 @@ const Nav = (props) => {
                 cachedCart[productInCartIndex].qty -= 1;
                 if (cachedCart[productInCartIndex].qty === 0) {
                   cachedCart.splice(productInCartIndex, 1);
+                  if (cachedCart.length === 0) {
+                    setCartVisible(false);
+                  }
                   return props.setCart([...cachedCart]);
                 }
                 props.setCart([...cachedCart]);
@@ -165,12 +175,8 @@ const Nav = (props) => {
             <ShoppingCartIcon
               fontSize="medium"
               sx={{ padding: '10px', boxSizing: 'content-box' }}
-              onMouseEnter={() => {
-                setCartVisible(true);
-              }}
-              onMouseLeave={() => {
-                setCartVisible(false);
-              }}
+              onMouseEnter={() => setCartVisible(true)}
+              onMouseLeave={() => setCartVisible(false)}
             />
           </NavLink>
         </motion.div>
@@ -180,17 +186,12 @@ const Nav = (props) => {
               initial={{ minHeight: '0px' }}
               animate={{ minHeight: '100px' }}
               exit={{ minHeight: '0px' }}
-              transition={{ duration: 0.5 }}
-              onMouseEnter={() => {
-                setCartVisible(true);
-                console.log(props.cart);
-              }}
-              onMouseLeave={() => {
-                setCartVisible(false);
-              }}
+              transition={{ duration: 0.5, delayChildren: 1 }}
+              onMouseEnter={() => setCartVisible(true)}
+              onMouseLeave={() => setCartVisible(false)}
               className="nav__cartcontainer p-2 bg-slate-100 absolute"
             >
-              {props.cart.length === 0 && (
+              {props.cart.length === 0 && cartVisible && (
                 <motion.p
                   initial={{ display: 'none' }}
                   animate={{ display: 'block' }}
@@ -203,7 +204,10 @@ const Nav = (props) => {
               )}
               {props.cart && cartVisible && cartProducts}
               {props.cart.length > 0 && cartVisible && (
-                <p className="text-black nav__carttotal">
+                <motion.p
+                  exit={{ display: 'none' }}
+                  className="text-black nav__carttotal"
+                >
                   Total:{' '}
                   <span className="font-semibold">
                     {props.cart
@@ -218,7 +222,7 @@ const Nav = (props) => {
                       .toFixed(2)}
                     $
                   </span>
-                </p>
+                </motion.p>
               )}
             </motion.div>
           )}
