@@ -1,10 +1,11 @@
-import { motion } from 'framer-motion';
-import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import '../../../Styles/Shop.css';
 import ShopProducts from './ShopProducts';
 
 const Shop = (props) => {
+  const [cartPopup, setCartPopup] = useState(false);
   return (
     <div className="shop bg-blue-300">
       <div className="page__navoverlay" />
@@ -32,6 +33,19 @@ const Shop = (props) => {
         </motion.h1>
       </div>
       <div className="shop__maincontainer py-12 px-24 bg-slate-100 h-full">
+        <AnimatePresence>
+          {cartPopup && (
+            <motion.div
+              initial={{ y: 100, opacity: 0.5 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              exit={{ y: 100, opacity: 0.5 }}
+              className="shop_addedpopup flex justify-center items-center absolute bg-white"
+            >
+              <p className="text-slate-400 py-3">Added to cart.</p>
+            </motion.div>
+          )}
+        </AnimatePresence>
         <motion.h2
           initial={{ y: '-10px', opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -44,6 +58,8 @@ const Shop = (props) => {
           productsArr={props.productsArr}
           updateCartQuantity={props.updateCartQuantity}
           cart={props.cart}
+          setCartPopup={setCartPopup}
+          cartPopup={cartPopup}
           setCart={props.setCart}
         />
       </div>

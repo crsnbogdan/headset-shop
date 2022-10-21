@@ -23,7 +23,8 @@ nav {
     right: 6rem;
     z-index: 7;
     -webkit-box-shadow: 0px 0px 15px 0px #00000035; 
-    box-shadow: 0px 0px 15px 0px #00000035};
+    box-shadow: 0px 0px 15px 0px #00000035
+};
 
 .nav__cartitem {
     gap: 10px;

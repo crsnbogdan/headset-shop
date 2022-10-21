@@ -31,6 +31,15 @@
     min-height: 75vh;
 }
 
+.shop_addedpopup {
+    width: 300px;
+    right: 6rem;
+    bottom: 30px;
+    -webkit-box-shadow: 0px 0px 15px 0px #00000035; 
+    box-shadow: 0px 0px 15px 0px #00000035;
+    z-index: 5;
+}
+
 .shop__productscontainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -143,6 +152,11 @@
 @media screen and (max-width: 800px) {
     .shop__maincontainer {
         padding: 1.5rem!important;
+    }
+    .shop_addedpopup{
+        right: 25%;
+        width: 50vw;
+        transform: translateX(50%);
     }
 
     .shop__productscontainer {

@@ -102,6 +102,8 @@ const ShopProducts = (props) => {
                   props.cart[productInCartIndex].qty + 1;
                 props.setCart([...cachedCart]);
               }
+              props.setCartPopup(true);
+              setTimeout(() => props.setCartPopup(false), 700);
             }}
           >
             <ShoppingCartIcon className="addbtn__icon" /> Add to Cart
