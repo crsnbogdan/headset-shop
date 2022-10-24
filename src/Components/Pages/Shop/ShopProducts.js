@@ -65,7 +65,12 @@ const ShopProducts = (props) => {
           <p className="font-semibold my-4">
             {product.name.substring(0, 50).trim() + '(...)'}
           </p>
-          <div className="flex mb-4">
+          <div
+            className="flex mb-4"
+            reviewAvg={
+              product.customerReviewAverage ? product.customerReviewAverage : 0
+            }
+          >
             <StarRatings
               rating={
                 product.customerReviewAverage
@@ -78,7 +83,7 @@ const ShopProducts = (props) => {
               numberOfStars={5}
               name="rating"
             />
-            <span className="text-sm mt-1 text-slate-400">
+            <span className="product__ratingcount text-sm mt-1 text-slate-400">
               {product.customerReviewCount &&
                 `(${product.customerReviewCount})`}
             </span>
@@ -86,7 +91,7 @@ const ShopProducts = (props) => {
           <p
             className={
               product.salePrice < product.regularPrice
-                ? 'product__price--sale font-semibold mb-4'
+                ? 'product__price product__price--sale font-semibold mb-4'
                 : 'product__price font-semibold mb-4'
             }
           >

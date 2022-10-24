@@ -7,7 +7,7 @@ import ShopProducts from './ShopProducts';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 
 const Shop = (props) => {
   const [cartPopup, setCartPopup] = useState(false);
