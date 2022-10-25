@@ -6,6 +6,7 @@ import { act } from 'react-dom/test-utils';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import Nav from '../Components/Nav';
+
 let cart = [
   {
     product: {
