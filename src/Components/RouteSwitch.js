@@ -6,6 +6,9 @@ import Home from './Pages/Home';
 import Shop from './Pages/Shop/Shop';
 
 const RouteSwitch = () => {
+  const showStars = true; // required for testingto disable the
+  // stars as they break snapshot tests
+
   const [productsArr, setProductsArr] = useState([]);
   const [cartQuantity, setCartQuantity] = useState(0);
   const [cart, setCart] = useState([]);
@@ -41,6 +44,7 @@ const RouteSwitch = () => {
             path="shop"
             element={
               <Shop
+                showStars={showStars}
                 productsArr={productsArr}
                 updateCartQuantity={updateCartQuantity}
                 cart={cart}

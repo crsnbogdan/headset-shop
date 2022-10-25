@@ -71,18 +71,20 @@ const ShopProducts = (props) => {
               product.customerReviewAverage ? product.customerReviewAverage : 0
             }
           >
-            <StarRatings
-              rating={
-                product.customerReviewAverage
-                  ? product.customerReviewAverage
-                  : 0
-              }
-              starRatedColor="#fde047"
-              starDimension="18px"
-              starSpacing="0px"
-              numberOfStars={5}
-              name="rating"
-            />
+            {props.showStars && (
+              <StarRatings
+                rating={
+                  product.customerReviewAverage
+                    ? product.customerReviewAverage
+                    : 0
+                }
+                starRatedColor="#fde047"
+                starDimension="18px"
+                starSpacing="0px"
+                numberOfStars={5}
+                name="rating"
+              />
+            )}
             <span className="product__ratingcount text-sm mt-1 text-slate-400">
               {product.customerReviewCount &&
                 `(${product.customerReviewCount})`}

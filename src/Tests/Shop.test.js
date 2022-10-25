@@ -45,6 +45,15 @@ let productsArr = [
   },
 ];
 
+it('renders corrently and matches snapshot', () => {
+  const shopTree = renderer
+    .create(
+      <Shop productsArr={productsArr} sortType="reviews" showStars={false} />
+    )
+    .toJSON();
+  expect(shopTree).toMatchSnapshot();
+});
+
 it('renders no products when props.productsArr is empty', () => {
   let { container } = render(<Shop productsArr={[]} sortType="reviews" />);
 
@@ -65,7 +74,7 @@ it('renders multiple shop products', () => {
 
 it('renders all HTML elements required for product cards', () => {
   let { container } = render(
-    <Shop productsArr={productsArr} sortType="reviews" />
+    <Shop productsArr={productsArr} sortType="reviews" showStars={true} />
   );
 
   expect(container.querySelector('.shop__productimg')).toBeInTheDocument();
@@ -136,11 +145,6 @@ it('increases props.cartQuantity and ".nav__qty" when the "Add to Cart" button o
     expect(container.querySelector('.nav__qty > p').textContent).toBe(4);
   }, 0);
 });
-
-/*
- To test:
-  - the sorting by: reviews, rating, price asc., price desc.
-*/
 
 it('sorts products based on review count', () => {
   let { container } = render(

@@ -1,0 +1,300 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders corrently and matches snapshot 1`] = `
+<div
+  className="shop bg-blue-300"
+>
+  <div
+    className="page__navoverlay"
+  />
+  <div
+    className="shop__hero relative flex items-center justify-center bg-slate-200"
+  >
+    <h1
+      className="text-white text-6xl font-bold"
+      style={
+        Object {
+          "opacity": 0,
+          "transform": "translateY(-20px) translateZ(0)",
+        }
+      }
+    >
+      <div
+        className="Typewriter"
+        data-testid="typewriter-wrapper"
+      />
+    </h1>
+  </div>
+  <div
+    className="shop__maincontainer py-12 px-24  bg-slate-100 h-full"
+  >
+    <div
+      className="flex justify-between items-center mb-4"
+      style={
+        Object {
+          "opacity": 0,
+          "transform": "translateY(-10px) translateZ(0)",
+        }
+      }
+    >
+      <h2
+        className="text-2xl"
+      >
+        Products:
+      </h2>
+      <div
+        className="MuiFormControl-root css-1nxucbq-MuiFormControl-root"
+      >
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1sumxir-MuiFormLabel-root-MuiInputLabel-root"
+          data-shrink={true}
+          id="demo-simple-select-label"
+        >
+          Sort by
+        </label>
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+          onClick={[Function]}
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            className="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Review count
+          </div>
+          <input
+            aria-hidden={true}
+            className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+            disabled={false}
+            onAnimationStart={[Function]}
+            onChange={[Function]}
+            required={false}
+            tabIndex={-1}
+            value="reviews"
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+            data-testid="ArrowDropDownIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-14lo706"
+            >
+              <span>
+                sortType
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      className="shop__productscontainer"
+    >
+      <div
+        className="shop__productcontainer"
+        style={Object {}}
+      >
+        <div
+          className="shop__product flex flex-col justify-between"
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(-20px) translateZ(0)",
+            }
+          }
+        >
+          <div
+            className="shop__productimg"
+            style={
+              Object {
+                "backgroundImage": "url(https://pisces.bbystatic.com/prescaled/500/500/image2/BestBuy_US/images/products/5053/5053501_sd.jpg)",
+              }
+            }
+          />
+          <p
+            className="font-semibold my-4"
+          >
+            Product 1(...)
+          </p>
+          <div
+            className="flex mb-4"
+            reviewAvg={4.7}
+          >
+            <span
+              className="product__ratingcount text-sm mt-1 text-slate-400"
+            >
+              (2267)
+            </span>
+          </div>
+          <p
+            className="product__price product__price--sale font-semibold mb-4"
+          >
+            89.99
+             $
+          </p>
+          <button
+            className="product__addbtn overflow relative h-8 rounded-md w-full"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium addbtn__icon css-i4bv87-MuiSvgIcon-root"
+              data-testid="ShoppingCartIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+              />
+            </svg>
+             Add to Cart
+          </button>
+        </div>
+      </div>
+      <div
+        className="shop__productcontainer"
+        style={Object {}}
+      >
+        <div
+          className="shop__product flex flex-col justify-between"
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(-20px) translateZ(0)",
+            }
+          }
+        >
+          <div
+            className="shop__productimg"
+            style={
+              Object {
+                "backgroundImage": "url(https://pisces.bbystatic.com/prescaled/500/500/image2/BestBuy_US/images/products/6298/6298657_sd.jpg)",
+              }
+            }
+          />
+          <p
+            className="font-semibold my-4"
+          >
+            Product 2(...)
+          </p>
+          <div
+            className="flex mb-4"
+            reviewAvg={4.6}
+          >
+            <span
+              className="product__ratingcount text-sm mt-1 text-slate-400"
+            >
+              (1437)
+            </span>
+          </div>
+          <p
+            className="product__price product__price--sale font-semibold mb-4"
+          >
+            99.99
+             $
+          </p>
+          <button
+            className="product__addbtn overflow relative h-8 rounded-md w-full"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium addbtn__icon css-i4bv87-MuiSvgIcon-root"
+              data-testid="ShoppingCartIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+              />
+            </svg>
+             Add to Cart
+          </button>
+        </div>
+      </div>
+      <div
+        className="shop__productcontainer"
+        style={Object {}}
+      >
+        <div
+          className="shop__product flex flex-col justify-between"
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(-20px) translateZ(0)",
+            }
+          }
+        >
+          <div
+            className="shop__productimg"
+            style={
+              Object {
+                "backgroundImage": "url(https://pisces.bbystatic.com/prescaled/500/500/image2/BestBuy_US/images/products/6298/6298657_sd.jpg)",
+              }
+            }
+          />
+          <p
+            className="font-semibold my-4"
+          >
+            Product 3(...)
+          </p>
+          <div
+            className="flex mb-4"
+            reviewAvg={3.7}
+          >
+            <span
+              className="product__ratingcount text-sm mt-1 text-slate-400"
+            >
+              (100)
+            </span>
+          </div>
+          <p
+            className="product__price product__price--sale font-semibold mb-4"
+          >
+            79.99
+             $
+          </p>
+          <button
+            className="product__addbtn overflow relative h-8 rounded-md w-full"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium addbtn__icon css-i4bv87-MuiSvgIcon-root"
+              data-testid="ShoppingCartIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+              />
+            </svg>
+             Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
