@@ -136,7 +136,7 @@ exports[`renders corrently and matches snapshot 1`] = `
           </p>
           <div
             className="flex mb-4"
-            reviewAvg={4.7}
+            reviewavg={4.7}
           >
             <span
               className="product__ratingcount text-sm mt-1 text-slate-400"
@@ -198,7 +198,7 @@ exports[`renders corrently and matches snapshot 1`] = `
           </p>
           <div
             className="flex mb-4"
-            reviewAvg={4.6}
+            reviewavg={4.6}
           >
             <span
               className="product__ratingcount text-sm mt-1 text-slate-400"
@@ -260,7 +260,7 @@ exports[`renders corrently and matches snapshot 1`] = `
           </p>
           <div
             className="flex mb-4"
-            reviewAvg={3.7}
+            reviewavg={3.7}
           >
             <span
               className="product__ratingcount text-sm mt-1 text-slate-400"

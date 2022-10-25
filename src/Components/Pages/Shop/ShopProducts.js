@@ -67,7 +67,7 @@ const ShopProducts = (props) => {
           </p>
           <div
             className="flex mb-4"
-            reviewAvg={
+            reviewavg={
               product.customerReviewAverage ? product.customerReviewAverage : 0
             }
           >
@@ -115,7 +115,7 @@ const ShopProducts = (props) => {
             }}
             className="product__addbtn overflow relative h-8 rounded-md w-full"
             onClick={() => {
-              props.updateCartQuantity(true);
+              props.setCartQuantity(props.cartQuantity + 1);
               props.setCartPopup(true);
               setTimeout(() => props.setCartPopup(false), 700);
               let productInCartIndex = props.cart.findIndex(
@@ -123,7 +123,7 @@ const ShopProducts = (props) => {
               );
 
               if (productInCartIndex === -1) {
-                return props.setCart([
+                props.setCart([
                   ...props.cart,
                   {
                     sku: product.sku,

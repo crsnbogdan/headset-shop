@@ -1,11 +1,8 @@
-import '@testing-library/jest-dom'; // optional
-import renderer from 'react-test-renderer';
-
+import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import React from 'react';
-
 import { BrowserRouter } from 'react-router-dom';
+import renderer from 'react-test-renderer';
 import Nav from '../Components/Nav';
 import Shop from '../Components/Pages/Shop/Shop';
 
@@ -84,8 +81,8 @@ it('renders all HTML elements required for product cards', () => {
   expect(container.querySelector('.product__addbtn')).toBeInTheDocument();
 });
 
-it('calls props.setCart and props.updateCartQuantity when the "Add to Cart" button of a product card is clicked', () => {
-  const updateCartQuantityMock = jest.fn();
+it('calls props.setCart and props.setCartQuantity when the "Add to Cart" button of a product card is clicked', () => {
+  const setCartQuantityMock = jest.fn();
   const setCartMock = jest.fn();
   let { container } = render(
     <>
@@ -93,12 +90,12 @@ it('calls props.setCart and props.updateCartQuantity when the "Add to Cart" butt
         <Nav
           cart={[]}
           setCart={setCartMock}
-          updateCartQuantity={updateCartQuantityMock}
+          setCartQuantity={setCartQuantityMock}
           cartQuantity={0}
         />
       </BrowserRouter>
       <Shop
-        updateCartQuantity={updateCartQuantityMock}
+        setCartQuantity={setCartQuantityMock}
         productsArr={productsArr}
         setCart={setCartMock}
         sortType="reviews"
@@ -109,13 +106,14 @@ it('calls props.setCart and props.updateCartQuantity when the "Add to Cart" butt
 
   let btns = [...container.querySelectorAll('.product__addbtn')];
   btns.forEach((btn) => userEvent.click(btn));
-  expect(updateCartQuantityMock).toHaveBeenCalledTimes(3);
+  expect(setCartQuantityMock).toHaveBeenCalledTimes(3);
   expect(setCartMock).toHaveBeenCalledTimes(3);
 });
 
 it('increases props.cartQuantity and ".nav__qty" when the "Add to Cart" button of a product card is clicked', () => {
   let cartQty = 0;
-  const updateCartQuantityMock = () => (cartQty += 1);
+
+  const setCartQuantityMock = () => (cartQty += 1);
   const setCartMock = jest.fn();
   let { container } = render(
     <>
@@ -123,12 +121,12 @@ it('increases props.cartQuantity and ".nav__qty" when the "Add to Cart" button o
         <Nav
           cart={[]}
           setCart={setCartMock}
-          updateCartQuantity={updateCartQuantityMock}
+          setCartQuantity={setCartQuantityMock}
           cartQuantity={cartQty}
         />
       </BrowserRouter>
       <Shop
-        updateCartQuantity={updateCartQuantityMock}
+        setCartQuantity={setCartQuantityMock}
         productsArr={productsArr}
         setCart={setCartMock}
         sortType="reviews"

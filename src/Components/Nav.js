@@ -12,7 +12,6 @@ import '../Styles/Nav.css';
 
 const Nav = (props) => {
   const [mobileNavVisible, setMobileNavVisible] = useState(false);
-  const [cartVisible, setCartVisible] = useState(false);
 
   let cartProducts = props.cart.map((cartItem) => {
     return (
@@ -26,7 +25,7 @@ const Nav = (props) => {
       >
         <img className="cartitem__img" src={cartItem.product.image} alt="" />
         <div className="cartitem__info flex flex-col justify-between text-sm text-black">
-          <p className="text-black font-semibold">
+          <p className="text-black font-semibold cartitem_itemtotal">
             <span className="font-normal">Total: </span>
             {(
               cartItem.qty *
@@ -37,12 +36,14 @@ const Nav = (props) => {
           <p className="text-sm">
             {cartItem.product.name.substring(0, 40).trim() + '(...)'}
           </p>
-          <p className="">Quantity: {cartItem.qty}</p>
+          <p className="cartitem__qtyval">Quantity: {cartItem.qty}</p>
         </div>
         <div className="cartitem__actions justify-between items-center flex flex-col">
           <DeleteIcon
             className="cartitem__delete"
             onClick={() => {
+              props.setCartQuantity(props.cartQuantity - cartItem.qty);
+
               let productInCartIndex = props.cart.findIndex(
                 (item) => cartItem.sku === item.sku
               );
@@ -53,9 +54,9 @@ const Nav = (props) => {
           />
           <div className="cartitem__qtymodifiers flex items-center ">
             <AddIcon
-              className="cartitem__qtymodifier"
+              className="cartitem__qtymodifier add"
               onClick={() => {
-                props.updateCartQuantity(true);
+                props.setCartQuantity(props.cartQuantity + 1);
                 let productInCartIndex = props.cart.findIndex(
                   (item) => cartItem.sku === item.sku
                 );
@@ -68,9 +69,9 @@ const Nav = (props) => {
               {cartItem.qty}
             </p>
             <RemoveIcon
-              className="cartitem__qtymodifier"
+              className="cartitem__qtymodifier subtract"
               onClick={() => {
-                props.updateCartQuantity(false);
+                props.setCartQuantity(props.cartQuantity - 1);
                 let productInCartIndex = props.cart.findIndex(
                   (item) => cartItem.sku === item.sku
                 );
@@ -79,7 +80,7 @@ const Nav = (props) => {
                 if (cachedCart[productInCartIndex].qty === 0) {
                   cachedCart.splice(productInCartIndex, 1);
                   if (cachedCart.length === 0) {
-                    setCartVisible(false);
+                    props.setCartVisible(false);
                   }
                   return props.setCart([...cachedCart]);
                 }
@@ -175,23 +176,23 @@ const Nav = (props) => {
             <ShoppingCartIcon
               fontSize="medium"
               sx={{ padding: '10px', boxSizing: 'content-box' }}
-              onMouseEnter={() => setCartVisible(true)}
-              onMouseLeave={() => setCartVisible(false)}
+              onMouseEnter={() => props.setCartVisible(true)}
+              onMouseLeave={() => props.setCartVisible(false)}
             />
           </NavLink>
         </motion.div>
         <AnimatePresence>
-          {cartVisible && (
+          {props.cartVisible && (
             <motion.div
               initial={{ minHeight: '0px' }}
               animate={{ minHeight: '100px' }}
               exit={{ minHeight: '0px' }}
               transition={{ duration: 0.5, delayChildren: 1 }}
-              onMouseEnter={() => setCartVisible(true)}
-              onMouseLeave={() => setCartVisible(false)}
+              onMouseEnter={() => props.setCartVisible(true)}
+              onMouseLeave={() => props.setCartVisible(false)}
               className="nav__cartcontainer p-2 bg-slate-100 absolute"
             >
-              {props.cart.length === 0 && cartVisible && (
+              {props.cart.length === 0 && props.cartVisible && (
                 <motion.p
                   initial={{ display: 'none' }}
                   animate={{ display: 'block' }}
@@ -202,8 +203,8 @@ const Nav = (props) => {
                   The cart is empty
                 </motion.p>
               )}
-              {props.cart && cartVisible && cartProducts}
-              {props.cart.length > 0 && cartVisible && (
+              {props.cart && props.cartVisible && cartProducts}
+              {props.cart.length > 0 && props.cartVisible && (
                 <motion.p
                   exit={{ display: 'none' }}
                   className="text-black nav__carttotal"

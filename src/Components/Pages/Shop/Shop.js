@@ -79,6 +79,8 @@ const Shop = (props) => {
           productsArr={props.productsArr}
           updateCartQuantity={props.updateCartQuantity}
           cart={props.cart}
+          cartQuantity={props.cartQuantity}
+          setCartQuantity={props.setCartQuantity}
           sortType={sortType}
           setCartPopup={setCartPopup}
           cartPopup={cartPopup}

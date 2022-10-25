@@ -6,19 +6,13 @@ import Home from './Pages/Home';
 import Shop from './Pages/Shop/Shop';
 
 const RouteSwitch = () => {
-  const showStars = true; // required for testingto disable the
+  const showStars = true; // required for testing - to disable the
   // stars as they break snapshot tests
+  const [cartVisible, setCartVisible] = useState(false);
 
   const [productsArr, setProductsArr] = useState([]);
   const [cartQuantity, setCartQuantity] = useState(0);
   const [cart, setCart] = useState([]);
-  const updateCartQuantity = (toIncrease) => {
-    if (toIncrease) {
-      return setCartQuantity(cartQuantity + 1);
-    } else {
-      return setCartQuantity(cartQuantity - 1);
-    }
-  };
 
   useEffect(() => {
     fetch(
@@ -33,10 +27,12 @@ const RouteSwitch = () => {
     <div className="app">
       <BrowserRouter>
         <Nav
-          updateCartQuantity={updateCartQuantity}
           cartQuantity={cartQuantity}
+          setCartQuantity={setCartQuantity}
           cart={cart}
           setCart={setCart}
+          cartVisible={cartVisible}
+          setCartVisible={setCartVisible}
         />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -46,7 +42,8 @@ const RouteSwitch = () => {
               <Shop
                 showStars={showStars}
                 productsArr={productsArr}
-                updateCartQuantity={updateCartQuantity}
+                cartQuantity={cartQuantity}
+                setCartQuantity={setCartQuantity}
                 cart={cart}
                 setCart={setCart}
               />

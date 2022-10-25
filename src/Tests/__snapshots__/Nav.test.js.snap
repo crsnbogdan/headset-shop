@@ -1,0 +1,380 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly and matches snapshot 1`] = `
+<div
+  className="nav__container"
+>
+  <nav
+    className="nav items-center relative text-white flex px-28 py-6 justify-between"
+  >
+    <h3
+      className="text-2xl text-yellow-300 font-semibold"
+    >
+      KB
+      <span
+        className="text-white font-light text-lg"
+      >
+        .shop
+      </span>
+    </h3>
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge nav__sidebartoggle css-tzssek-MuiSvgIcon-root"
+      data-testid="MenuIcon"
+      focusable="false"
+      onClick={[Function]}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+      />
+    </svg>
+    <div
+      className="nav__links w-3/12 text-lg flex items-center justify-between"
+      style={
+        Object {
+          "right": "-300px",
+        }
+      }
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge nav__close css-tzssek-MuiSvgIcon-root"
+        data-testid="CloseIcon"
+        focusable="false"
+        onClick={[Function]}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+        />
+      </svg>
+      <a
+        aria-current="page"
+        className="nav__link cart active"
+        href="/"
+        onClick={[Function]}
+      >
+        home
+      </a>
+      <a
+        className="nav__link"
+        href="/shop"
+        onClick={[Function]}
+      >
+        shop
+      </a>
+      <a
+        className="nav__link relative"
+        href="/cart"
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-2psjec-MuiSvgIcon-root"
+          data-testid="ShoppingCartIcon"
+          focusable="false"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+          />
+        </svg>
+      </a>
+    </div>
+    <div
+      className="nav__cartcontainer p-2 bg-slate-100 absolute"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "minHeight": "0px",
+        }
+      }
+    >
+      <div
+        className="nav__cartitem grid p-2 bg-white"
+        style={
+          Object {
+            "opacity": 0,
+          }
+        }
+      >
+        <img
+          alt=""
+          className="cartitem__img"
+          src="https://pisces.bbystatic.com/prescaled/500/500/image2/BestBuy_US/images/products/5053/5053501_sd.jpg"
+        />
+        <div
+          className="cartitem__info flex flex-col justify-between text-sm text-black"
+        >
+          <p
+            className="text-black font-semibold cartitem_itemtotal"
+          >
+            <span
+              className="font-normal"
+            >
+              Total: 
+            </span>
+            89.99
+            $
+          </p>
+          <p
+            className="text-sm"
+          >
+            Product 1(...)
+          </p>
+          <p
+            className="cartitem__qtyval"
+          >
+            Quantity: 
+            1
+          </p>
+        </div>
+        <div
+          className="cartitem__actions justify-between items-center flex flex-col"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium cartitem__delete css-i4bv87-MuiSvgIcon-root"
+            data-testid="DeleteIcon"
+            focusable="false"
+            onClick={[Function]}
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+            />
+          </svg>
+          <div
+            className="cartitem__qtymodifiers flex items-center "
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium cartitem__qtymodifier add css-i4bv87-MuiSvgIcon-root"
+              data-testid="AddIcon"
+              focusable="false"
+              onClick={[Function]}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+              />
+            </svg>
+            <p
+              className="text-lg text-black font-semibold py-1 px-3 bg-slate-100"
+            >
+              1
+            </p>
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium cartitem__qtymodifier subtract css-i4bv87-MuiSvgIcon-root"
+              data-testid="RemoveIcon"
+              focusable="false"
+              onClick={[Function]}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 13H5v-2h14v2z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        className="nav__cartitem grid p-2 bg-white"
+        style={
+          Object {
+            "opacity": 0,
+          }
+        }
+      >
+        <img
+          alt=""
+          className="cartitem__img"
+          src="https://pisces.bbystatic.com/prescaled/500/500/image2/BestBuy_US/images/products/5053/5053501_sd.jpg"
+        />
+        <div
+          className="cartitem__info flex flex-col justify-between text-sm text-black"
+        >
+          <p
+            className="text-black font-semibold cartitem_itemtotal"
+          >
+            <span
+              className="font-normal"
+            >
+              Total: 
+            </span>
+            359.96
+            $
+          </p>
+          <p
+            className="text-sm"
+          >
+            Product 2(...)
+          </p>
+          <p
+            className="cartitem__qtyval"
+          >
+            Quantity: 
+            4
+          </p>
+        </div>
+        <div
+          className="cartitem__actions justify-between items-center flex flex-col"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium cartitem__delete css-i4bv87-MuiSvgIcon-root"
+            data-testid="DeleteIcon"
+            focusable="false"
+            onClick={[Function]}
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+            />
+          </svg>
+          <div
+            className="cartitem__qtymodifiers flex items-center "
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium cartitem__qtymodifier add css-i4bv87-MuiSvgIcon-root"
+              data-testid="AddIcon"
+              focusable="false"
+              onClick={[Function]}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+              />
+            </svg>
+            <p
+              className="text-lg text-black font-semibold py-1 px-3 bg-slate-100"
+            >
+              4
+            </p>
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium cartitem__qtymodifier subtract css-i4bv87-MuiSvgIcon-root"
+              data-testid="RemoveIcon"
+              focusable="false"
+              onClick={[Function]}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 13H5v-2h14v2z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        className="nav__cartitem grid p-2 bg-white"
+        style={
+          Object {
+            "opacity": 0,
+          }
+        }
+      >
+        <img
+          alt=""
+          className="cartitem__img"
+          src="https://pisces.bbystatic.com/prescaled/500/500/image2/BestBuy_US/images/products/6298/6298657_sd.jpg"
+        />
+        <div
+          className="cartitem__info flex flex-col justify-between text-sm text-black"
+        >
+          <p
+            className="text-black font-semibold cartitem_itemtotal"
+          >
+            <span
+              className="font-normal"
+            >
+              Total: 
+            </span>
+            159.98
+            $
+          </p>
+          <p
+            className="text-sm"
+          >
+            Product 3(...)
+          </p>
+          <p
+            className="cartitem__qtyval"
+          >
+            Quantity: 
+            2
+          </p>
+        </div>
+        <div
+          className="cartitem__actions justify-between items-center flex flex-col"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium cartitem__delete css-i4bv87-MuiSvgIcon-root"
+            data-testid="DeleteIcon"
+            focusable="false"
+            onClick={[Function]}
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+            />
+          </svg>
+          <div
+            className="cartitem__qtymodifiers flex items-center "
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium cartitem__qtymodifier add css-i4bv87-MuiSvgIcon-root"
+              data-testid="AddIcon"
+              focusable="false"
+              onClick={[Function]}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+              />
+            </svg>
+            <p
+              className="text-lg text-black font-semibold py-1 px-3 bg-slate-100"
+            >
+              2
+            </p>
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium cartitem__qtymodifier subtract css-i4bv87-MuiSvgIcon-root"
+              data-testid="RemoveIcon"
+              focusable="false"
+              onClick={[Function]}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 13H5v-2h14v2z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <p
+        className="text-black nav__carttotal"
+        style={Object {}}
+      >
+        Total:
+         
+        <span
+          className="font-semibold"
+        >
+          609.93
+          $
+        </span>
+      </p>
+    </div>
+  </nav>
+</div>
+`;
