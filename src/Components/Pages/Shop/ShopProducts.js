@@ -9,6 +9,7 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { motion } from 'framer-motion';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
 import '../../../Styles/Shop.css';
 
@@ -43,7 +44,7 @@ const ShopProducts = (props) => {
     delayAnimVal += 0.15;
     return (
       <motion.div
-        className="shop__productcontainer"
+        className="shop__productcontainer reltive"
         key={product.sku}
         whileHover={{
           boxShadow: '0px 0px 15px -2px rgba(0, 0, 0, 0.15)',
@@ -102,45 +103,68 @@ const ShopProducts = (props) => {
               : product.regularPrice}
             {' $'}
           </p>
-          <motion.button
-            whileHover={{
-              backgroundImage:
-                'linear-gradient(to right, rgb(139, 92, 246), rgb(29, 78, 216))',
-            }}
-            transition={{
-              duration: 0.5,
-            }}
-            whileTap={{
-              scale: 0.98,
-            }}
-            className="product__addbtn overflow relative h-8 rounded-md w-full"
-            onClick={() => {
-              props.setCartQuantity(props.cartQuantity + 1);
-              props.setCartPopup(true);
-              setTimeout(() => props.setCartPopup(false), 700);
-              let productInCartIndex = props.cart.findIndex(
-                (item) => product.sku === item.sku
-              );
+          <div className="product__btns flex justify-between">
+            <motion.button
+              whileHover={{
+                backgroundImage:
+                  'linear-gradient(to right, rgb(126, 34, 206), rgb(29, 78, 216))',
+              }}
+              transition={{
+                duration: 0.5,
+              }}
+              whileTap={{
+                scale: 0.98,
+              }}
+              className="product__addbtn overflow relative h-8 rounded-md w-9/12"
+              onClick={() => {
+                props.setCartQuantity(props.cartQuantity + 1);
+                props.setCartPopup(true);
+                setTimeout(() => props.setCartPopup(false), 700);
+                let productInCartIndex = props.cart.findIndex(
+                  (item) => product.sku === item.sku
+                );
 
-              if (productInCartIndex === -1) {
-                props.setCart([
-                  ...props.cart,
-                  {
-                    sku: product.sku,
-                    qty: 1,
-                    product: product,
-                  },
-                ]);
-              } else {
-                let cachedCart = props.cart;
-                cachedCart[productInCartIndex].qty =
-                  props.cart[productInCartIndex].qty + 1;
-                props.setCart([...cachedCart]);
-              }
-            }}
-          >
-            <ShoppingCartIcon className="addbtn__icon" /> Add to Cart
-          </motion.button>
+                if (productInCartIndex === -1) {
+                  props.setCart([
+                    ...props.cart,
+                    {
+                      sku: product.sku,
+                      qty: 1,
+                      product: product,
+                    },
+                  ]);
+                } else {
+                  let cachedCart = props.cart;
+                  cachedCart[productInCartIndex].qty =
+                    props.cart[productInCartIndex].qty + 1;
+                  props.setCart([...cachedCart]);
+                }
+              }}
+            >
+              <ShoppingCartIcon className="addbtn__icon" /> Add to Cart
+            </motion.button>
+            <Link
+              className="w-3/12 ml-2"
+              to={`product-${product.sku}`}
+              onClick={() => props.setCurrentProduct(product)}
+            >
+              <motion.button
+                whileHover={{
+                  backgroundImage:
+                    'linear-gradient(to left, rgb(231, 229, 228), rgb(148, 163, 184))',
+                }}
+                transition={{
+                  duration: 0.5,
+                }}
+                whileTap={{
+                  scale: 0.98,
+                }}
+                className="product__viewbtn overflow relative h-8 text-slate-600 rounded-md w-full"
+              >
+                View
+              </motion.button>
+            </Link>
+          </div>
         </motion.div>
       </motion.div>
     );

@@ -10,6 +10,7 @@ const Home = (props) => {
   useEffect(() => {
     props.setCart(JSON.parse(localStorage.getItem('cart')));
   }, []);
+
   return (
     <div className="frontpage relative">
       <div className="page__navoverlay" />

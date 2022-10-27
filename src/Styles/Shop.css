@@ -5,6 +5,16 @@
 .page__navoverlay {
     display: none;
 }
+.shop__product--hover {
+    position: absolute;
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    
+}
 
 .page__navoverlay.visible {
     display: block;
@@ -91,7 +101,12 @@
 .product__addbtn {
     overflow: hidden;
     color: white;
-    background-image: linear-gradient(to right, rgb(29, 78, 216), rgb(126, 34, 206) 75%);
+    background-image: linear-gradient(to right, rgb(29, 78, 216), rgb(126, 34, 206));
+}
+
+.product__viewbtn {
+    background-image: linear-gradient(to left, rgb(148, 163, 184), rgb(231, 229, 228));
+
 }
 
 .addbtn__icon {

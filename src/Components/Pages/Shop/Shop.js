@@ -79,6 +79,8 @@ const Shop = (props) => {
           </FormControl>
         </motion.div>
         <ShopProducts
+          currentProduct={props.currentProduct}
+          setCurrentProduct={props.setCurrentProduct}
           showStars={props.showStars}
           productsArr={props.productsArr}
           updateCartQuantity={props.updateCartQuantity}

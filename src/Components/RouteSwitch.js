@@ -3,12 +3,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './Footer';
 import Nav from './Nav';
 import Home from './Pages/Home';
+import Product from './Pages/Product';
 import Shop from './Pages/Shop/Shop';
 
 const RouteSwitch = () => {
   const showStars = true; // required for testing - to disable the
   // stars as they break snapshot tests
   const [cartVisible, setCartVisible] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState();
 
   const [productsArr, setProductsArr] = useState([]);
   const [cartQuantity, setCartQuantity] = useState(0);
@@ -50,8 +52,14 @@ const RouteSwitch = () => {
                 setCartQuantity={setCartQuantity}
                 cart={cart}
                 setCart={setCart}
+                currentProduct={currentProduct}
+                setCurrentProduct={setCurrentProduct}
               />
             }
+          ></Route>
+          <Route
+            path={currentProduct ? `shop/product-${currentProduct.sku}` : null}
+            element={<Product currentProduct={currentProduct} />}
           />
         </Routes>
         <Footer />
