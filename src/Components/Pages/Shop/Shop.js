@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import '../../../Styles/Shop.css';
 import ShopProducts from './ShopProducts';
@@ -12,6 +12,10 @@ import Select from '@mui/material/Select';
 const Shop = (props) => {
   const [cartPopup, setCartPopup] = useState(false);
   const [sortType, setSortType] = useState('reviews');
+
+  useEffect(() => {
+    props.setCart(JSON.parse(localStorage.getItem('cart')));
+  }, []);
 
   return (
     <div className="shop bg-blue-300">

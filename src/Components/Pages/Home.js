@@ -1,12 +1,15 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import Model from '../Model';
 
 import '../../Styles/Home.css';
 
-const Home = () => {
+const Home = (props) => {
+  useEffect(() => {
+    props.setCart(JSON.parse(localStorage.getItem('cart')));
+  }, []);
   return (
     <div className="frontpage relative">
       <div className="page__navoverlay" />

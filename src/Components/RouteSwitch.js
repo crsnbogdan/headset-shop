@@ -23,6 +23,10 @@ const RouteSwitch = () => {
       .catch(() => console.error('invalid fetch'));
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
   return (
     <div className="app">
       <BrowserRouter>
@@ -35,7 +39,7 @@ const RouteSwitch = () => {
           setCartVisible={setCartVisible}
         />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home setCart={setCart} />} />
           <Route
             path="shop"
             element={
