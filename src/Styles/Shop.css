@@ -82,7 +82,7 @@
     background-repeat: no-repeat;
 }
 
-.product__price--sale {
+.product__price--sale, .product__saleprice {
     color: red;
 }
 

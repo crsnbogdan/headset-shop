@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './Footer';
 import Nav from './Nav';
 import Home from './Pages/Home';
-import Product from './Pages/Product';
+import Product from './Pages/Shop/Product';
 import Shop from './Pages/Shop/Shop';
 
 const RouteSwitch = () => {
@@ -15,6 +15,8 @@ const RouteSwitch = () => {
   const [productsArr, setProductsArr] = useState([]);
   const [cartQuantity, setCartQuantity] = useState(0);
   const [cart, setCart] = useState([]);
+
+  const [cartPopup, setCartPopup] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -54,12 +56,24 @@ const RouteSwitch = () => {
                 setCart={setCart}
                 currentProduct={currentProduct}
                 setCurrentProduct={setCurrentProduct}
+                cartPopup={cartPopup}
+                setCartPopup={setCartPopup}
               />
             }
           ></Route>
           <Route
             path={currentProduct ? `shop/product-${currentProduct.sku}` : null}
-            element={<Product currentProduct={currentProduct} />}
+            element={
+              <Product
+                currentProduct={currentProduct}
+                setCurrentProduct={setCurrentProduct}
+                cartQuantity={cartQuantity}
+                setCartQuantity={setCartQuantity}
+                setCartPopup={setCartPopup}
+                cart={cart}
+                setCart={setCart}
+              />
+            }
           />
         </Routes>
         <Footer />

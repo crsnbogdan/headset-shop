@@ -42,6 +42,7 @@ const ShopProducts = (props) => {
   let delayAnimVal = 0.0;
   let sortedProducts = productsArr.map((product) => {
     delayAnimVal += 0.15;
+
     return (
       <motion.div
         className="shop__productcontainer reltive"

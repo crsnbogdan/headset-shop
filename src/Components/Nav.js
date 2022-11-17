@@ -96,9 +96,11 @@ const Nav = (props) => {
   return (
     <div className="nav__container">
       <nav className="nav items-center relative text-white flex px-28 py-6 justify-between">
-        <h3 className="text-2xl text-yellow-300 font-semibold">
-          KB<span className="text-white font-light text-lg">.shop</span>
-        </h3>
+        <NavLink to="/">
+          <h3 className="text-2xl text-yellow-300 font-semibold">
+            KB<span className="text-white font-light text-lg">.shop</span>
+          </h3>
+        </NavLink>
         <MenuIcon
           className="nav__sidebartoggle"
           fontSize="large"

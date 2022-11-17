@@ -10,7 +10,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 
 const Shop = (props) => {
-  const [cartPopup, setCartPopup] = useState(false);
   const [sortType, setSortType] = useState('reviews');
 
   useEffect(() => {
@@ -45,7 +44,7 @@ const Shop = (props) => {
       </div>
       <div className="shop__maincontainer py-12 px-24  bg-slate-100 h-full">
         <AnimatePresence>
-          {cartPopup && (
+          {props.cartPopup && (
             <motion.div
               initial={{ y: 100, opacity: 0.5 }}
               animate={{ y: 0, opacity: 1 }}
@@ -88,8 +87,8 @@ const Shop = (props) => {
           cartQuantity={props.cartQuantity}
           setCartQuantity={props.setCartQuantity}
           sortType={sortType}
-          setCartPopup={setCartPopup}
-          cartPopup={cartPopup}
+          setCartPopup={props.setCartPopup}
+          cartPopup={props.cartPopup}
           setCart={props.setCart}
         />
       </div>
